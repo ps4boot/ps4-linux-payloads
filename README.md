@@ -1,4 +1,4 @@
-# ![PS4](https://img.shields.io/badge/-PS4-003791?style=flat&logo=PlayStation) Linux Payloads for FW 6.72 - 12.00 
+# ![PS4](https://img.shields.io/badge/-PS4-003791?style=flat&logo=PlayStation) Linux Payloads for FW 9.00 - 12.00 
 (Southbridge: Aeolia & Belize(2) & Baikal)
 
 **Linux-Payloads** kexec for PlayStation 4.
