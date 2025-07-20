@@ -5,6 +5,9 @@
 
 # Supported Firmwares
 
+*   FW 5.05 ⛔ Note: i use the Linux Loader from valentinbreiz/eeply/psxita for this Firmware (for me its working better as this new one)
+*   FW 6.72 ⛔ Note: i use the Linux Loader from valentinbreiz/eeply/psxita for this Firmware (for me its working better as this new one)
+
 *   FW 9.00 ✅ 
 *   FW 9.03 / 9.04 ✅ 
 *   FW 9.50 / 9.51 / 9.60 ✅ 
