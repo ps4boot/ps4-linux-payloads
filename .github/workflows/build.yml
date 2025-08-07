@@ -3,7 +3,7 @@ name: Build PS4 Linux Payloads
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
