@@ -1,0 +1,14 @@
+#pragma once
+#define kernel_offset_xfast_syscall 0x1c0
+#define kernel_offset_allproc 0x02269f30
+#define kernel_offset_vmspace_acquire_ref 0x00476140
+#define kernel_offset_vmspace_free 0x0x00475f70
+#define kernel_offset_printf 0x00450e80
+#define kernel_offset_kmem_alloc 0x0036e120
+#define kernel_offset_kernel_map 0x021a9250
+#define kernel_offset_sysent 0x011029c0
+#define kernel_offset_proc_rwmem 0x004244a0
+#define kernel_offset_copyin 0x000d7560
+
+#define kernel_patch_kmem_alloc_1 0x00428a2c
+#define kernel_patch_kmem_alloc_2 0x00428a33

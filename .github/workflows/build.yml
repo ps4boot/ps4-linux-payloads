@@ -1,0 +1,47 @@
+name: Build PS4 Linux Payloads
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential clang llvm yasm
+
+      - name: Build PS4 payloads in linux/
+        run: |
+          cd linux
+          make
+
+      - name: Move .bin files to bin/ folder
+        run: |
+          mkdir -p artifacts/bin
+          find linux/fw* -name '*.bin' -exec cp --parents {} artifacts/bin/ \;
+
+      - name: Move .elf files to elf/ folder
+        run: |
+          mkdir -p artifacts/elf
+          find linux/fw* -name '*.elf' -exec cp --parents {} artifacts/elf/ \;
+
+      - name: Upload .bin payloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps4-payloads-bin
+          path: artifacts/bin
+
+      - name: Upload .elf payloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps4-payloads-elf
+          path: artifacts/elf

@@ -1,4 +1,0 @@
-*.o
-*.a
-kexec.elf
-kexec.bin

@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #include <stddef.h>
 #include <unistd.h>
-#include <fcntl.h>
+#include <sys/fcntl.h>
 #include <sys/mman.h>
 #include <signal.h>
 #include <sys/thr.h>
@@ -10,13 +10,28 @@
 
 #if defined(__9_00__)
 asm("ps4kexec:\n.incbin \"ps4-kexec-900/kexec.bin\"\nps4kexec_end:\n");
-#include "ps4-kexec-900/magic.h"
-#elif defined(__6_72__)
-asm("ps4kexec:\n.incbin \"ps4-kexec-672/kexec.bin\"\nps4kexec_end:\n");
-#include "ps4-kexec-672/magic.h"
-#elif defined(__5_05__)
-asm("ps4kexec:\n.incbin \"ps4-kexec-505/kexec.bin\"\nps4kexec_end:\n");
-#include "ps4-kexec-505/magic.h"
+#include "magic.h"
+#elif defined(__9_03__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-903/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__9_60__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-960/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__10_00__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1000/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__10_50__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1050/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__11_00__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1100/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__11_50__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1150/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
+#elif defined(__12_00__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1200/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
 #else
 #error "unsupported firmware"
 #endif
@@ -43,7 +58,7 @@ void kernel_main()
     //set pstate before shutdown, needed for PS4 Pro console
     *(char*)(kernel_base + kern_off_pstate_before_shutdown) = 0x03;
     asm volatile("mov %%cr0, %%rax\nbts $16, %%rax\nmov %%rax, %%cr0\nsti":::"rax");
-        
+
     unsigned long long early_printf = kernel_base + kernel_offset_printf;
     unsigned long long kmem_alloc = kernel_base + kernel_offset_kmem_alloc;
     unsigned long long kernel_map = kernel_base + kernel_offset_kernel_map;
@@ -140,7 +155,7 @@ int my_atoi(const char *s)
 #endif
 
 #ifndef HDD_BOOT_PATH
-#define HDD_BOOT_PATH "/user/system/boot/"
+#define HDD_BOOT_PATH "/data/linux/boot/"
 #endif
 
 int main()
@@ -187,10 +202,9 @@ int main()
             }
     }
     else
-        cmdline = "panic=0 clocksource=tsc consoleblank=0 drm.debug=0 drm.edid_firmware=edid/my_edid.bin";
+        cmdline = "panic=0 clocksource=tsc consoleblank=0 net.ifnames=0 radeon.dpm=0 amdgpu.dpm=0 drm.debug=0 console=ttyS0,115200n8 console=tty0 video=HDMI-A-1:1920x1080@60";
 
-    //panic=0 clocksource=tsc console=tty0 console=ttyS0,115200n8 console=uart8250,mmio32,0xd0340000 video=HDMI-A-1:1920x1080-24@60 consoleblank=0 net.ifnames=0 drm.debug=0 amdgpu.dpm=0";
-
+    // video=HDMI-A-1:1920x1080-24@60      drm.edid_firmware=edid/1920x1080.bin  drm.edid_firmware=edid/my_edid.bin
 
     L("vram.txt", &vramstr, &vramstr_size, 0);
     if(vramstr && vramstr_size)
