@@ -11,7 +11,7 @@
 *   FW 10.00 / 10.01 ✅ 
 *   FW 10.50 / 10.70 / 10.71 ✅ 
 *   FW 11.00 ✅ 
-*   FW 11.50 / 11.52 ✅ (not tested yet) 
+*   FW 11.50 / 11.52 ✅
 *   FW 12.00 / 12.02 ✅ 
 
 Be sure you have saved your LUA Games license best is a 1:1 clone from your ps4 drive!! I take no responsibility if you lose your jailbreak!!!  
