@@ -36,30 +36,14 @@ jobs:
           zip -r ps4-payloads-bin.zip bin
           zip -r ps4-payloads-elf.zip elf
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Create GitHub Release and upload assets
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
-          release_name: "PS4 Payloads Release v${{ github.run_number }}"
+          name: "PS4 Payloads Release v${{ github.run_number }}"
           body: "Automated build of PS4 payloads."
-          draft: false
-          prerelease: false
+          files: |
+            artifacts/ps4-payloads-bin.zip
+            artifacts/ps4-payloads-elf.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload .bin payloads ZIP
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: artifacts/ps4-payloads-bin.zip
-          asset_name: ps4-payloads-bin.zip
-          asset_content_type: application/zip
-
-      - name: Upload .elf payloads ZIP
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: artifacts/ps4-payloads-elf.zip
-          asset_name: ps4-payloads-elf.zip
-          asset_content_type: application/zip
