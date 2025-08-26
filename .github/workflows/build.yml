@@ -43,7 +43,8 @@ jobs:
           body: "Automated build of PS4 payloads."
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload .bin payloads as release assets
         uses: actions/upload-release-asset@v1
