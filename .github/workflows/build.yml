@@ -34,14 +34,28 @@ jobs:
           mkdir -p artifacts/elf
           find linux/fw* -name '*.elf' -exec cp --parents {} artifacts/elf/ \;
 
-      - name: Upload .bin payloads
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         with:
-          name: ps4-payloads-bin
-          path: artifacts/bin
+          tag_name: v${{ github.run_number }}
+          release_name: "PS4 Payloads Release v${{ github.run_number }}"
+          body: "Automated build of PS4 payloads."
+          draft: false
+          prerelease: false
 
-      - name: Upload .elf payloads
-        uses: actions/upload-artifact@v4
+      - name: Upload .bin payloads as release assets
+        uses: actions/upload-release-asset@v1
         with:
-          name: ps4-payloads-elf
-          path: artifacts/elf
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: artifacts/bin
+          asset_name: ps4-payloads-bin.zip
+          asset_content_type: application/zip
+
+      - name: Upload .elf payloads as release assets
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: artifacts/elf
+          asset_name: ps4-payloads-elf.zip
+          asset_content_type: application/zip
