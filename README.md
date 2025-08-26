@@ -14,8 +14,6 @@
 *   FW 11.50 / 11.52 ✅
 *   FW 12.00 / 12.02 ✅ 
 
-Be sure you have saved your LUA Games license best is a 1:1 clone from your ps4 drive!! I take no responsibility if you lose your jailbreak!!!  
-
 
 ## Compile
     git clone https://github.com/ps4gentoo/ps4-linux-payloads
@@ -23,9 +21,11 @@ Be sure you have saved your LUA Games license best is a 1:1 clone from your ps4 
     make
 
 ## Info
-the internal path by default is at: /data/linux/boot  the rest is coming from the initramfs.cpio.gz init configuration
-so you can go into the rescue shell without a usb stick just upload the bzImage and initramfs.cpio.gz over ftp to your PS4 Drive
-/data/linux/boot/[bzimage,initramfs.cpio.gz] and of course it will work too with a USB / HDD Drive.  USB have highest prio so if a USB is connected he will  use this bzImage and initramfs.cpio.gz from there 
+the internal path by default is at: ``/data/linux/boot``  
+the rest is coming from the initramfs.cpio.gz init configuration
+so you can go into the rescue shell without a usb stick just upload the ``bzImage`` and ``initramfs.cpio.gz`` over ftp to your PS4 Drive
+``/data/linux/boot/[bzimage,initramfs.cpio.gz]`` 
+and of course it will work too with a USB / HDD Drive.  USB have highest prio so if a USB is connected he will  use this bzImage and initramfs.cpio.gz from there 
 
 bootargs.txt you can also add a textfile for changing the cmdline.
 vram.txt with this you can change the vram over a textfile.
@@ -34,7 +34,9 @@ vram.txt with this you can change the vram over a textfile.
 * Don`t use PRO Payloads for Phat or Slim. 
 
 * if you need UART just add this to the cmdline i have disabled .... just for now on newer Kernel it doesnt work.
+
 Aeolia/Belize: ``console=uart8250,mmio32,0xd0340000``
+
 Baikal: ``console=uart8250,mmio32,0xC890E000``
 
 
