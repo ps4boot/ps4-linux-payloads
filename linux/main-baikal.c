@@ -26,6 +26,9 @@ asm("ps4kexec:\n.incbin \"ps4-kexec-1050-baikal/kexec.bin\"\nps4kexec_end:\n");
 #elif defined(__11_00__)
 asm("ps4kexec:\n.incbin \"ps4-kexec-1100-baikal/kexec.bin\"\nps4kexec_end:\n");
 #include "magic.h"
+#elif defined(__11_02__)
+asm("ps4kexec:\n.incbin \"ps4-kexec-1100-baikal/kexec.bin\"\nps4kexec_end:\n");
+#include "magic.h"
 #elif defined(__11_50__)
 asm("ps4kexec:\n.incbin \"ps4-kexec-1150-baikal/kexec.bin\"\nps4kexec_end:\n");
 #include "magic.h"
@@ -58,7 +61,7 @@ void kernel_main()
     //set pstate before shutdown, needed for PS4 Pro console
     *(char*)(kernel_base + kern_off_pstate_before_shutdown) = 0x03;
     asm volatile("mov %%cr0, %%rax\nbts $16, %%rax\nmov %%rax, %%cr0\nsti":::"rax");
-        
+
     unsigned long long early_printf = kernel_base + kernel_offset_printf;
     unsigned long long kmem_alloc = kernel_base + kernel_offset_kmem_alloc;
     unsigned long long kernel_map = kernel_base + kernel_offset_kernel_map;
