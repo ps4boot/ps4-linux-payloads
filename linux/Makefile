@@ -35,6 +35,10 @@ clean:
 	cd ps4-kexec-1100-pro; make clean
 	cd ps4-kexec-1100-baikal; make clean
 	cd ps4-kexec-1100-pro-baikal; make clean
+	cd ps4-kexec-1102; make clean
+	cd ps4-kexec-1102-pro; make clean
+	cd ps4-kexec-1102-baikal; make clean
+	cd ps4-kexec-1102-pro-baikal; make clean
 	cd ps4-kexec-1150; make clean
 	cd ps4-kexec-1150-pro; make clean
 	cd ps4-kexec-1150-baikal; make clean
