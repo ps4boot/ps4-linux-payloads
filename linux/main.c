@@ -27,7 +27,7 @@ asm("ps4kexec:\n.incbin \"ps4-kexec-1050/kexec.bin\"\nps4kexec_end:\n");
 asm("ps4kexec:\n.incbin \"ps4-kexec-1100/kexec.bin\"\nps4kexec_end:\n");
 #include "magic.h"
 #elif defined(__11_02__)
-asm("ps4kexec:\n.incbin \"ps4-kexec-1100/kexec.bin\"\nps4kexec_end:\n");
+asm("ps4kexec:\n.incbin \"ps4-kexec-1102/kexec.bin\"\nps4kexec_end:\n");
 #include "magic.h"
 #elif defined(__11_50__)
 asm("ps4kexec:\n.incbin \"ps4-kexec-1150/kexec.bin\"\nps4kexec_end:\n");
