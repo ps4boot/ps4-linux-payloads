@@ -3,7 +3,7 @@
 
 **Linux-Payloads** kexec for PlayStation 4.
 
-The host with precompiled Linux payloads only works with GoldHEN v2.4b18.5/v2.4b18.6 BinLoader. Just open the web browser and cache the host—it will also work offline.
+The host with precompiled Linux payloads only works with GoldHEN v2.4b18.5/v2.4b18.6 BinLoader. Just open the web browser and cache the host—it will also work offline too.
 https://ps4boot.github.io
 you’ll find Linux payloads for your firmware, along with some extra payloads. The rest are already included in GoldHEN.
 
@@ -36,6 +36,8 @@ bootargs.txt you can also add a textfile for changing the cmdline.
 vram.txt with this you can change the vram over a textfile.
 
 ## Note 
+* With new GoldHEN Version v2.4b18.5/v2.4b18.6 use .elf`s Files instead of .bin it works better 100% Success. 
+
 * Don`t use PRO Payloads for Phat or Slim. 
 
 * if you need UART just add this to the cmdline i have disabled .... just for now on newer Kernel it doesnt work.
