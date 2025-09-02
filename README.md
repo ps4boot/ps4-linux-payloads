@@ -3,7 +3,7 @@
 
 **Linux-Payloads** kexec for PlayStation 4.
 
-The host with precompiled Linux payloads only works with GoldHEN v2.4b18.5 BinLoader. Just open the web browser and cache the host—it will also work offline.
+The host with precompiled Linux payloads only works with GoldHEN v2.4b18.5/v2.4b18.6 BinLoader. Just open the web browser and cache the host—it will also work offline.
 https://ps4boot.github.io
 you’ll find Linux payloads for your firmware, along with some extra payloads. The rest are already included in GoldHEN.
 
