@@ -1,4 +1,39 @@
-#ifdef PS4_6_72 //ethylamine Joonie86 mircoho
+#ifdef PS4_5_05
+#define kern_off_printf 0x436040
+#define kern_off_snprintf 0x436350
+#define kern_off_copyin 0x1EA710
+#define kern_off_copyout 0x1EA630
+#define kern_off_copyinstr 0x1EAB40
+#define kern_off_kmem_alloc_contig 0xF1C90
+#define kern_off_kmem_free 0xFCE50
+#define kern_off_pmap_extract 0x2E0570
+#define kern_off_pmap_protect 0x2E3090
+#define kern_off_sched_pin 0x31FF40
+#define kern_off_sched_unpin 0x31FF50
+#define kern_off_smp_rendezvous 0x1B85B0
+#define kern_off_smp_no_rendevous_barrier 0x1B8370
+#define kern_off_icc_query_nowait 0x44020
+#define kern_off_kernel_map 0x1AC60E0
+#define kern_off_sysent 0x107C610
+#define kern_off_kernel_pmap_store 0x22CB570
+#define kern_off_Starsha_UcodeInfo 0
+#define kern_off_gpu_devid_is_9924 0x4DE010
+#define kern_off_gc_get_fw_info 0x4D37A0
+#define kern_off_pml4pml4i 0x22CB560
+#define kern_off_dmpml4i 0x22CB564
+#define kern_off_dmpdpi 0x22CB568
+#define kern_off_eap_hdd_key 0x2790C90
+#define kern_off_edid 0x281A3F4
+#define kern_off_wlanbt 0x2BFBA0
+#define kern_off_kern_reboot 0x10D390
+#define kern_off_set_gpu_freq 0x4D2530
+#define kern_off_set_pstate 0x4CC8A0
+#define kern_off_update_vddnp 0x4D2AA0
+#define kern_off_set_cu_power_gate 0x4D2C40
+#define kern_off_pstate_before_shutdown 0x10D97E
+#define kern_off_set_nclk_mem_spd 0x30C270
+
+#elif defined PS4_6_72 //ethylamine Joonie86 mircoho
 #define kern_off_printf 0x123280
 #define kern_off_snprintf 0x123590
 #define kern_off_copyin 0x3C17A0

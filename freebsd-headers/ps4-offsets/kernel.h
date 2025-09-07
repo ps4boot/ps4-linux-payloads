@@ -1,3 +1,6 @@
+#ifdef __5_05__
+#include "505.h"
+#else
 #ifdef __6_72__
 #include "672.h"
 #else
@@ -29,6 +32,7 @@
 #include "1200.h"
 #else
 #error "unsupported firmware"
+#endif
 #endif
 #endif
 #endif

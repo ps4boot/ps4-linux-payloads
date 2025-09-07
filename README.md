@@ -1,4 +1,4 @@
-# ![PS4](https://img.shields.io/badge/-PS4-003791?style=flat&logo=PlayStation) Linux Payloads for FW 9.00 - 12.02 
+# ![PS4](https://img.shields.io/badge/-PS4-003791?style=flat&logo=PlayStation) Linux Payloads for FW 5.05 - 12.02
 (Southbridge: Aeolia & Belize(2) & Baikal)
 
 **Linux-Payloads** kexec for PlayStation 4.
@@ -9,6 +9,8 @@ you’ll find Linux payloads for your firmware, along with some extra payloads. 
 
 # Supported Firmwares
 
+*   FW 5.05 ✅
+*   FW 6.72 ✅
 *   FW 9.00 ✅ 
 *   FW 9.03 / 9.04 ✅ 
 *   FW 9.50 / 9.51 / 9.60 ✅ 
@@ -54,10 +56,3 @@ Baikal: ``console=uart8250,mmio32,0xC890E000``
 * bestpig / EchoStretch / EinTim23 (Offsets)
 * others ... 
 
-
-# For Firmware 5.05 and 6.72 use the "old" Linux Loader Source.
-1 Loader: https://github.com/ps4gentoo/PS4-Linux-Loader
-
-2 Kexec: https://github.com/ps4gentoo/ps4-kexec
-
-3 SDK: https://github.com/ps4boot/ps4-payload-sdk
