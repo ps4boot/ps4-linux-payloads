@@ -14,6 +14,7 @@ you’ll find Linux payloads for your firmware, along with some extra payloads. 
 
 *   FW 5.05 ✅
 *   FW 6.72 ✅
+*   FW 7.00 ✅
 *   FW 9.00 ✅ 
 *   FW 9.03 / 9.04 ✅ 
 *   FW 9.50 / 9.51 / 9.60 ✅ 
@@ -56,6 +57,6 @@ Baikal: ``console=uart8250,mmio32,0xC890E000``
 * marcan, shuffle2, eeply, rancido, valeryy, ethylamine, Joonie86 (Linux)
 * sleirsgoevy (for the script and better exploit FW 672) 
 * AlAzif / KiwiDog / Specter / Celesteblue / ChendoChap / zecoxao / SocraticBliss / ctn123 (Exploit and Fun Stuff for the Console)
-* bestpig / EchoStretch / EinTim23 (Offsets)
+* bestpig / EchoStretch / EinTim23 / tihmstar (Offsets)
 * others ... 
 
