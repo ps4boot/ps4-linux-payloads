@@ -3,7 +3,7 @@ all: fw505/payload-505-1gb.bin fw505/payload-505-2gb.bin fw505/payload-505-3gb.b
 clean:
 	rm -f fw505/*
 	rm -f fw672/*
-	rm -r fw700/*
+	rm -f fw700/*
 	rm -f fw900/*
 	rm -f fw903/*
 	rm -f fw960/*

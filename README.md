@@ -14,7 +14,7 @@ you’ll find Linux payloads for your firmware, along with some extra payloads. 
 
 *   FW 5.05 ✅
 *   FW 6.72 ✅
-*   FW 7.00 ✅
+*   FW 7.00 ✅(?)
 *   FW 9.00 ✅ 
 *   FW 9.03 / 9.04 ✅ 
 *   FW 9.50 / 9.51 / 9.60 ✅ 
