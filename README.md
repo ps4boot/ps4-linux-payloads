@@ -14,7 +14,7 @@ you’ll find Linux payloads for your firmware, along with some extra payloads. 
 
 *   FW 5.05 ✅
 *   FW 6.72 ✅
-*   FW 7.00 ✅(?)
+*   FW 7.00 / 7.02(?) ✅
 *   FW 9.00 ✅ 
 *   FW 9.03 / 9.04 ✅ 
 *   FW 9.50 / 9.51 / 9.60 ✅ 
@@ -26,12 +26,13 @@ you’ll find Linux payloads for your firmware, along with some extra payloads. 
 *   FW 12.00 / 12.02 ✅ 
 
 
-## Compile
-    git clone https://github.com/ps4gentoo/ps4-linux-payloads
-    cd ps4-linux-payloads/linux
-    make
+## New
+- Automatic boot files placement – The kernel (bzImage) and initramfs.cpio.gz are now automatically copied to /data/linux/boot on the internal drive. No external drive is needed to boot into the rescue shell.
 
+- RTC time passed to initramfs – The current time from OrbisOS is added to the kernel command line (time=CURRENTTIME), ensuring the correct time is set at boot instead of defaulting to 1970, even if the RTC hardware cannot be read directly.
 ## Info
+
+## Info 
 the internal path by default is at: ``/data/linux/boot``  
 the rest is coming from the initramfs.cpio.gz init configuration
 so you can go into the rescue shell without a usb stick just upload the ``bzImage`` and ``initramfs.cpio.gz`` over ftp to your PS4 Drive
